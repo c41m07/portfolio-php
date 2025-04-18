@@ -1,0 +1,17 @@
+{
+    "name": "your-name/portfolio-php",
+    "description": "Mon portfolio en PHP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "dompdf/dompdf": "^3.1"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
