@@ -14,13 +14,12 @@ $projets = $pdo->query('SELECT * FROM projets')->fetchAll();
 <head>
     <base href="<?= BASE_URL ?>/">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">0
     <title>Mon Portfolio</title>
     <!-- Mise à jour vers Bootstrap 5.3.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -34,6 +33,7 @@ $projets = $pdo->query('SELECT * FROM projets')->fetchAll();
                 <p class="lead fs-4 mt-3">
                     Découvrez mes projets, mon parcours et mes compétences.
                 </p>
+                <a href="pages/cv.php" class="btn btn-primary">Télécharger mon CV</a>
             </div>
         </div>
     </section>

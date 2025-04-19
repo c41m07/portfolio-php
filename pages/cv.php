@@ -7,26 +7,14 @@ use Dompdf\Dompdf;
 // Créer une instance de Dompdf
 $dompdf = new Dompdf();
 
-// Ton contenu HTML du CV (tu peux styliser avec du CSS inline ou intégré)
-$html = '
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>CV Kévin</title>
-    <style>
-        body { font-family: Arial, sans-serif; color: #333; padding: 20px; }
-        h1 { color: #39ff14; }
-    </style>
-</head>
-<body>
-    <h1>Test CV</h1>
-    
-</body>
-</html>
-';
 
-// Charger le HTML
+// Récupérer le contenu HTML du lien
+$html = file_get_contents('http://localhost/CV-php/');
+
+// Ajouter les styles CSS
+$html .= '<style>' . file_get_contents('http://localhost/CV-php/public/css/style.css') . '</style>';
+
+// Charger le HTML avec les styles
 $dompdf->loadHtml($html);
 
 // Définir le format du papier
