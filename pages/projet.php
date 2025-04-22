@@ -34,7 +34,7 @@ if (!isset($_GET['id'])) {
     <h1 class="display-3 text-primary fw-bold mb-4 border-bottom pb-3"><?= htmlspecialchars($projet['titre']) ?></h1>
 
     <!-- Image du projet -->
-    <?php if(!empty($projet['image'])): ?>
+    <?php if (!empty($projet['image'])) : ?>
         <div class="text-center mb-4">
             <img src="<?= htmlspecialchars($projet['image']) ?>" class="img-fluid rounded-3 shadow-sm hover-zoom border border-2 w-100 mx-auto d-block" alt="<?= htmlspecialchars($projet['titre']) ?>">
         </div>
@@ -48,7 +48,7 @@ if (!isset($_GET['id'])) {
     <!-- Boutons d'action -->
     <div class="d-flex flex-wrap gap-3 mt-4">
         <!-- Bouton pour aller vers le lien du projet externe -->
-        <?php if(!empty($projet['lien'])): ?>
+        <?php if (!empty($projet['lien'])) : ?>
             <a href="<?= htmlspecialchars($projet['lien']) ?>" class="btn btn-primary btn-lg shadow-sm" target="_blank">
                 <i class="fas fa-external-link-alt me-2"></i>Voir le projet
             </a>

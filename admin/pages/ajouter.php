@@ -1,21 +1,19 @@
 <?php
-require_once __DIR__ . '/../../src/init.php';
 
+require_once __DIR__ . '/../../src/init.php';
 // Vérification si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupération des données du formulaire
+// Récupération des données du formulaire
     $titre = $_POST['titre'];
     $info = $_POST['info'];
     $image = $_POST['image'];
     $lien = $_POST['lien'];
     $date_creation = $_POST['date_creation'];
-
-    // Insertion des données dans la base de données
+// Insertion des données dans la base de données
     $insert = $pdo->prepare('INSERT INTO projets (titre, info, image, lien, date_creation) VALUES (?, ?, ?, ?, ?)');
     $insert->execute([$titre, $info, $image, $lien, $date_creation]);
-
-    // Redirection vers la page d'administration
-    header('Location:'.BASE_URL.'/admin/index.php');
+// Redirection vers la page d'administration
+    header('Location:' . BASE_URL . '/admin/index.php');
     exit();
 }
 ?>

@@ -3,7 +3,7 @@ require_once __DIR__ . '/../src/init.php';
 
 // Vérification de la connexion
 if (!($_SESSION['connecte'] ?? false)) {
-    header('Location:'.BASE_URL.'/admin/pages/login.php');
+    header('Location:' . BASE_URL . '/admin/pages/login.php');
     exit();
 }
 
@@ -66,18 +66,18 @@ $projets = $pdo->query('SELECT * FROM projets ORDER BY projets.date_creation DES
                     </tr>
                     </thead>
                     <tbody>
-                    <?php if(empty($projets)): ?>
+                    <?php if (empty($projets)) : ?>
                         <tr>
                             <td colspan="5" class="text-center py-4">Aucun projet disponible</td>
                         </tr>
-                    <?php else: ?>
-                        <?php foreach ($projets as $projet): ?>
+                    <?php else : ?>
+                        <?php foreach ($projets as $projet) : ?>
                             <tr class="transition-hover">
                                 <td><?= $projet['id'] ?></td>
                                 <td>
-                                    <?php if (!empty($projet['image'])): ?>
+                                    <?php if (!empty($projet['image'])) : ?>
                                         <img src="<?= htmlspecialchars($projet['image']) ?>" alt="miniature" style="height: 50px; border-radius: 5px;">
-                                    <?php else: ?>
+                                    <?php else : ?>
                                         <span class="text-muted">Aucune</span>
                                     <?php endif; ?>
                                 </td>

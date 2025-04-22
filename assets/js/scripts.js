@@ -1,5 +1,6 @@
 //Fonction qui affiche une citation aléatoire dans le footerancrage
-function randomQuote() {
+function randomQuote()
+{
     const quotes = [
         "Le code, c'est comme l'humour. Quand vous devez l'expliquer, c'est mauvais.",
         "Parler ne coûte rien. Montrez-moi le code. – Linus Torvalds",
@@ -34,24 +35,24 @@ randomQuote();
 setInterval(randomQuote, 5000);
 
 // Fonction pour améliorer la navigation par ancres avec navbar fixe
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Sélectionne tous les liens avec des ancres
     const ancrage = document.querySelectorAll('a[href^="index.php#"]');
-    
+
     ancrage.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             // Empêche le comportement par défaut
             e.preventDefault();
-            
+
             // Récupère l'ancre à partir de l'attribut href
             const targetId = this.getAttribute('href').split('#')[1];
             const targetElement = document.getElementById(targetId);
-            
+
             if (targetElement) {
                 // Calcule la position avec un décalage pour la navbar
                 const offset = 70; // Ajustez selon la hauteur de votre navbar
                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-                
+
                 // Scroll jusqu'à la position calculée
                 window.scrollTo({
                     top: targetPosition,

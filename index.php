@@ -70,16 +70,16 @@ $projets = $pdo->query('SELECT * FROM projets')->fetchAll();
         <div class="container">
             <h2 class="h2 fw-bold text-primary mb-4">Mon Portfolio</h2>
 
-            <?php if(empty($projets)): ?>
+            <?php if (empty($projets)) : ?>
                 <div class="alert alert-info">Aucun projet à afficher pour le moment.</div>
-            <?php else: ?>
+            <?php else : ?>
                 <div class="row g-4">
-                    <?php foreach ($projets as $projet): ?>
+                    <?php foreach ($projets as $projet) : ?>
                         <div class="col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 shadow-sm border-0 transition-hover">
-                                <?php if(!empty($projet['image'])): ?>
+                                <?php if (!empty($projet['image'])) : ?>
                                     <img src="<?= htmlspecialchars($projet['image']) ?>" class="card-img-top" alt="<?= htmlspecialchars($projet['titre']) ?>">
-                                <?php else: ?>
+                                <?php else : ?>
                                     <div class="bg-secondary text-white text-center p-5">
                                         <i class="fas fa-code fa-3x"></i>
                                     </div>

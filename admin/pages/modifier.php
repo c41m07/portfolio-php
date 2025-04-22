@@ -1,7 +1,7 @@
 <?php
+
 require_once __DIR__ . '/../../src/init.php';
 $id = $_GET['id'] ?? 0;
-
 $edit = $pdo->prepare('SELECT * FROM projets WHERE id = ?');
 $edit->execute([$id]);
 $projet = $edit->fetch();
@@ -11,19 +11,17 @@ if (!$projet) {
 }
 // Vérification si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupération des données du formulaire
+// Récupération des données du formulaire
     $titre = $_POST['titre'];
     $info = $_POST['info'];
     $image = $_POST['image'];
     $lien = $_POST['lien'];
     $date_creation = $_POST['date_creation'];
-
-    // Mise à jour des données dans la base de données
+// Mise à jour des données dans la base de données
     $update = $pdo->prepare('UPDATE projets SET titre = ?, info = ?, image = ?, lien = ?, date_creation = ? WHERE id = ?');
     $update->execute([$titre, $info, $image, $lien, $date_creation, $id]);
-
-    // Redirection vers la page d'administration
-    header('Location:'.BASE_URL.'/admin/index.php');
+// Redirection vers la page d'administration
+    header('Location:' . BASE_URL . '/admin/index.php');
     exit();
 }
 ?>

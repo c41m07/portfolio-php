@@ -3,7 +3,7 @@ require_once __DIR__ . '/../../src/init.php';
 
 
 //traitement du formulaire de connexion
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupération des données du formulaire
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['connecte'] = true;
         $_SESSION['username'] = $user['username'];
-        header('Location:'.BASE_URL.'/admin/index.php');
+        header('Location:' . BASE_URL . '/admin/index.php');
         exit();
     } else {
         $erreur = "Identifiant ou mot de passe incorrect.";
@@ -44,7 +44,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <h1 class="h3 mb-0"><i class="fas fa-lock me-2"></i>Connexion Administration</h1>
                 </div>
                 <div class="card-body p-4">
-                    <?php if(isset($erreur)): ?>
+                    <?php if (isset($erreur)) : ?>
                         <div class="alert alert-danger d-flex align-items-center" role="alert">
                             <i class="fas fa-exclamation-triangle me-2"></i>
                             <div><?= $erreur ?></div>
