@@ -33,7 +33,7 @@ $projets = $pdo->query('SELECT * FROM projets')->fetchAll();
                 <p class="lead fs-4 mt-3">
                     Découvrez mes projets, mon parcours et mes compétences.
                 </p>
-                <a href="pages/cv.php" class="btn btn-primary">Télécharger mon CV</a>
+<!--                <a href="pages/cv.php" class="btn btn-primary">Télécharger mon CV</a>-->
             </div>
         </div>
     </section>
