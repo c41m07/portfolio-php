@@ -25,7 +25,7 @@ if (!isset($_GET['id'])) {
     <title><?= htmlspecialchars($projet['titre']) ?></title>
     <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
 </head>
 <body class="bg-light" >
 

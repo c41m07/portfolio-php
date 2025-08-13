@@ -17,7 +17,7 @@ $dompdf = new Dompdf($options);
 $html = file_get_contents('http://localhost/CV-php/index.php');
 
 // Ajouter uniquement votre CSS simplifié pour l'impression
-$html .= '<style>' . file_get_contents('http://localhost/CV-php/public/css/style.css') . '</style>';
+$html .= '<style>' . file_get_contents(ROOT_PATH . '/assets/css/style.css') . '</style>';
 
 // Supprimer toutes les références à Bootstrap et autres ressources externes
 // qui pourraient causer des problèmes avec Dompdf
